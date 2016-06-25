@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.User1" table="user">
+        <id name="userID" column="userID" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property name="userName" column="userName" type="java.lang.String"/>
+        <property name="userPassword" column="userPassword" type="java.lang.String"/>
+        <property name="status" column="status" type="java.lang.String"/>
+         <property name="email" column="email" type="java.lang.String"/>
+        <property name="createTime" column="createTime" type="timestamp"/>
+    </class>
+</hibernate-mapping>

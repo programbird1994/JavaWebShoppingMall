@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.Category" table="category">
+        <id name="categoryID" column="categoryID" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property name="categoryName" column="categoryName" type="java.lang.String"/>
+        <property name="parentCategoryID" column="parentCategoryID" type="java.lang.Integer"/>
+        
+    </class>
+</hibernate-mapping>

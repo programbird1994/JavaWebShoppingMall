@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.ProductDetail" table="product_detail">
+        <id name="productID" column="productID" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+       <property name="sellCount" column="sellCount" type="java.lang.Integer"/>
+       <property name="storeCount" column="storeCount" type="java.lang.Integer"/>
+        <property name="productName" column="productName" type="java.lang.String"/>
+        <property name="price" column="price" type="double"/>
+        <property name="brand" column="brand" type="java.lang.String"/>
+        <property name="image" column="image" type="java.lang.String"/>
+         <property name="keyword" column="keyword" type="java.lang.String"/>
+         <property name="description" column="description" type="java.lang.String"/>
+        <property name="shopID" column="shopID" type="java.lang.Integer"/>
+         <property name="categoryID" column="categoryID" type="java.lang.Integer"/>
+          <property name="createTime" column="createTime" type="timestamp"/>
+    </class>
+</hibernate-mapping>

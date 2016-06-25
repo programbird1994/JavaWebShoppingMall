@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                    http://www.springframework.org/schema/mvc
+                    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+                    http://www.springframework.org/schema/tx 
+                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                    http://www.springframework.org/schema/aop
+                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                    
+                    ">
+                  <mvc:annotation-driven/>
+                  <mvc:resources location="/WEB-INF/jsp/resources/" mapping="/jsp/resources/**"/>
+                  <mvc:resources location="/WEB-INF/jsp/upload/" mapping="/jsp/upload/**"/>
+                  <mvc:resources location="/WEB-INF/jsp/admin/" mapping="/jsp/admin/**"/>
+                  
+<context:component-scan base-package="com.huyang.controller.spring"/>
+<context:component-scan base-package="com.huyang.dao.spring"/>
+<context:component-scan base-package="com.huyang.service.spring"/>
+<tx:annotation-driven transaction-manager="transactionManager"/>
+ 
+<!-- HandlerAdapter -->
+<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+
+<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+<property name="messageConverters">
+<list>
+<ref bean="mappingJacksonHttpMessageConverter" />
+</list>
+</property>
+</bean>
+<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+<property name="supportedMediaTypes">
+<list>
+<value>text/html;charset=UTF-8</value>
+</list>
+</property>
+</bean>
+
+
+<!-- ViewResolver -->
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    <property name="prefix" value="/WEB-INF/jsp/"/>
+    <property name="suffix" value=".jsp"/>
+</bean>
+ 
+    <bean id="sessionFactory"  
+        class="org.springframework.orm.hibernate3.LocalSessionFactoryBean" >  
+        <property name="configLocations">  
+            <value>WEB-INF/hibernate.cfg.xml</value>  
+        </property>  
+    </bean>  
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+	<tx:annotation-driven/>
+    
+
+
+<!-- bean class="com.huyang.service.spring.getAllShopsService" id="getallShopService" --> 
+
+
+
+
+
+
+
+
+
+<!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->  
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+        <!-- 指定所上传文件的总大小不能超过200KB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->  
+        <property name="maxUploadSize" value="2000000"/>  
+        <property name="defaultEncoding" value="utf-8"/>
+    </bean>  
+      
+      
+
+</beans>

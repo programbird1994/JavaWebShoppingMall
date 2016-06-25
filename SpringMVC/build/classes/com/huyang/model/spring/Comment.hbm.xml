@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.Comment" table="comment">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+       <property name="commentContent" column="commentContent" type="java.lang.String"/>
+        <property name="userName" column="userName" type="java.lang.String"/>
+        <property name="productID" column="productID" type="java.lang.Integer"/>
+        <property name="rank" column="rank" type="double"/>
+        <property name="commentID" column="commentID" type="java.lang.Integer"/>
+       <property name="createTime" column="createTime" type="timestamp"/>
+    </class>
+</hibernate-mapping>

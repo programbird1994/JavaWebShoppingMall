@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.Address" table="address">
+        <id name="addressID" column="addressID" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+          
+            <property name="consigner" column="consigner" type="java.lang.String"/>
+              <property name="city" column="city" type="java.lang.String"/>
+                <property name="province" column="province" type="java.lang.String"/>
+                  <property name="town" column="town" type="java.lang.String"/>
+        <property name="zipCode" column="zipCode" type="java.lang.String"/>
+        <property name="telephone" column="telephone" type="java.lang.String"/>
+        <property name="detailAddress" column="detailAddress" type="java.lang.String"/>
+        
+    </class>
+</hibernate-mapping>

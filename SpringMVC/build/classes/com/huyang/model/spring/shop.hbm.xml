@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.huyang.model.spring.shop" table="shop_detail">
+        <id name="shopID" column="shopID" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property name="shopName" column="shopName" type="java.lang.String"/>
+        <property name="test" column="test" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

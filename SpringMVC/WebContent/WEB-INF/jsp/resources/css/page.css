@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+.g-cf:after {clear: both;content: "";display: table;}  
+.g-cf {zoom:1;}  
+/*分页*/  
+.g-pager{ text-align:center; color: #111111; font: 12px/1.5em Arial,Tahoma;  float: right;}  
+.g-pager a,.g-pager input{ cursor:pointer; border:solid 1px #0F71BE; padding:1px 4px; color:#0F71BE; margin:0 2px; vertical-align:middle; }  
+.g-pager a.cur,.g-pager a:hover{ background-color:#0F71BE; color:#fff}  
+.g-pager a.no{ border-color:#A3A3A3; color:#A3A3A3; background-color:#E4F2F9}  
+.g-pager span{ margin-right:10px; }  
+.g-pager input{ cursor:default; width:28px; padding:1px 2px; }  
+.g-pagerwp{ height:23px; line-height:23px;padding:5px; margin-bottom:10px; border: 1px solid #DDDDDD;}  
+.g-pagerwp .g-btn{ vertical-align:top}  
